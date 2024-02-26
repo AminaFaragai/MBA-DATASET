@@ -18,7 +18,7 @@ warnings.filterwarnings('ignore')
 df = pd.read_csv('Workshop-5-dataset.zip', sep='\t',dtype=np.str)
 
 
-# ### Q1. Print the first five rows of the dataset.
+# Printing the first five rows of the dataset.
 
 # In[146]:
 
@@ -26,7 +26,7 @@ df = pd.read_csv('Workshop-5-dataset.zip', sep='\t',dtype=np.str)
 df.head()
 
 
-# ### Q2. How many rows and columns are there in the dataset?
+# ### Number of rows and columns in the dataset
 
 # In[147]:
 
@@ -59,8 +59,7 @@ file_name = STUDENT_NAME + "_" + STUDENT_NO + ".csv"
 data.to_csv(file_name) 
 
 
-# ### Q3. How many unique dates are there in the dataset? HINT: You can use the .nunique() function available in Pandas.
-
+# ### number of unique dates in the dataset
 # In[151]:
 
 
@@ -233,14 +232,11 @@ item_number = [x[1] for x in mostcommon]
 
 item
 
-
-# ### Q4.How many of these items can you find in the rules you have just displayed?Are all the top 10 items included? Provide an explanation as to why these items may be missing/present in the rules.
-
 # Based on the top 10 association rule, none of the most common items are in top 10 of the association result displayed. This is because the most common items were mostly purchased as single items, and not in combination with other items. Although, the most common items had the highest number of sales in the shop, therefore, it could be suggested that the shelves in the shop be re-arranged such that, less comonly bought items be placed next to the most frequently purchased items on the shelves.
 # 
 # Another reason why these products were the most common, but not in top 10 association rule might be because these particular products are cheap in this shop, compared to other items, in different shops, so customers tend to buy only those items from this shop. Hence, running promotions on buying the less purchased items together with the most common items at a lesser price might increase the sales.
 
-# ### Q5. Run the apriori algorithm with the following three different settings
+# ### Running the apriori algorithm with the following three different settings
 
 # In[175]:
 
@@ -365,7 +361,7 @@ print(association_results[0])
 display_rules(association_results[:12])
 
 
-# Calculate the number of rules you get for each setting and how the quality of the rules differ in each setting.
+# Calculating the number of rules you get for each setting and how the quality of the rules differ in each setting.
 # 
 # Setting 1: Min Support = 0.015, Min Confidence = 0.7, Min Lift = 3, rules generated = 4
 # 
@@ -583,24 +579,7 @@ del counter['nan']
 counter.most_common(10)
 
 
-# ### Report
 
-# The above analysis indicates the following:
-# 
-# September,October and November were the months with the highest sales.
-# 
-# December and February had the least sales. Perhaps because February has less number of days, and in December, customers exhaust their funds in buying christmas gifts, so less sales were recorded in the shop.  
-# 
-# January,March,April,May,June,July and August had a fair amount of sales.
-# 
-# Whereas from the contents of the baskets, more picnic items were purchased in July because of summer holiday. While in December, the basket had more winter related items like mug warmer,hot water bottles, celebrations items and school items for kids. September and November had more items in the basket, whilst Febraury and December had the least items in the basket, which corresponds with the low sales seen for those months. 
-# 
-# Comparing association rules for July and December shows that, though December had fewer sales, items were frequently bought together, hence the higher the number of rules generated. For eample - ALARM CLOCK BAKELIKE GREEN -> ALARM CLOCK BAKELIKE RED and ALARM CLOCK BAKELIKE GREEN -> ALARM CLOCK BAKELIKE RED were purchased all purchased in July and December, indicating these are popular products during that time of the year. Increase in sales of this products can be acheived by running promotions on the products in other months apart from July and December.
-# 
-# The rules generated for all months are generally good, but using the visualization method to remove redundant/repetitive rules is strongly advised.
-# 
-
-# In[ ]:
 
 
 
