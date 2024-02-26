@@ -39,8 +39,8 @@ df.shape
 # In[148]:
 
 
-STUDENT_NAME = 'AminaUmarFaragai'
-STUDENT_NO = '5230'
+STUDENT_NAME = ''
+STUDENT_NO = ''
 
 
 # In[149]:
